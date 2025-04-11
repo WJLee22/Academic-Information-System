@@ -12,7 +12,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/css/main.css" >
+          href="${pageContext.request.contextPath}/resources/css/createoffer.css" >
 
 </head>
 <body>

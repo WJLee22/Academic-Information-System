@@ -1,18 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: nykim
-  Date: 2022/12/13
-  Time: 12:55 오전
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <title>$Title$</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
   </head>
   <body>
-  <!-- URL은 contextPath(helloSpringMVC)가 앞에 붙게됨 -->
-  <p> <a href="${pageContext.request.contextPath}/offers">Show current offers!</a> </p>
-  <p> <a href="${pageContext.request.contextPath}/createoffer">Add a new offer</a> </p>
+  <h1>학사 정보 시스템</h1>
+  <div class="menu">
+    <button onclick="location.href='${pageContext.request.contextPath}/credits'">① 학년별 이수 학점 조회</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/enroll'">② 수강 신청하기</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/enrolled-courses'">③ 수강 신청 조회</button>
+  </div>
   </body>
 </html>
