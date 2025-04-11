@@ -25,9 +25,9 @@ public class CourseController {
     }
 
     @GetMapping("/details")
-    public String showDetails(@RequestParam int year, @RequestParam int semester, Model model) {
+    public String showDetails(@RequestParam("year") int year, @RequestParam("semester") int semester, Model model) {
         // creditsService의 getCourseDetails메서드를 통해 특정 년도와 학기에 해당하는 교과목 레코드들을 가져옴.
-        model.addAttribute("courses", courseService.getCoursesByYearAndSemester(year, semester));
+        model.addAttribute("courses", courseService.getAllCoursesByYearAndSemester(year, semester));
         model.addAttribute("year", year);
         model.addAttribute("semester", semester);
         return "details"; // details.jsp

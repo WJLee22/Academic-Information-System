@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 000ju
@@ -23,12 +24,12 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="summary" items="${creditSummaries}">
+    <c:forEach var="semesterInfo" items="${creditsPerSemester}">
         <tr>
-            <td>${summary.year}</td>
-            <td>${summary.semester}</td>
-            <td>${summary.totalCredits}</td>
-            <td><a href="${pageContext.request.contextPath}/details?year=${summary.year}&semester=${summary.semester}">링크</a></td>
+            <td>${semesterInfo.year}</td>
+            <td>${semesterInfo.semester}</td>
+            <td>${semesterInfo.totalCredits}</td>
+            <td><a href="${pageContext.request.contextPath}/details?year=${semesterInfo.year}&semester=${semesterInfo.semester}">링크</a></td>
         </tr>
     </c:forEach>
     <tr>

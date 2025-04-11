@@ -1,5 +1,6 @@
 package kr.ac.hansung.cse.service;
 
+import kr.ac.hansung.cse.dao.CourseDao;
 import kr.ac.hansung.cse.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,8 +38,8 @@ public class CourseService {
     public Long getTotalCredits() {
         return courseDao.getCredits();
     }
-    // getCourseDetails() => ‘상세보기’ 링크 클릭시 나타나는 특정 년도의 학기에 해당하는 학기별 수강 내역 레코드들을 가져오는 메서드
-    public List<Course> getCourseDetails(int year, int semester) {
+    // getCourseDetails() => ‘상세보기’ 링크 클릭시 나타나는 특정 년도의 해당학기에 해당하는 학기별 수강 내역 레코드들을 가져오는 메서드
+    public List<Course> getAllCoursesByYearAndSemester(int year, int semester) {
         return courseDao.getCoursesByYearAndSemester(year, semester);
     }
 }
