@@ -10,11 +10,11 @@
 <html>
 <head>
     <title>학년별 이수 학점 조회</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/credits.css">
 </head>
 <body>
 <h1>학년별 이수 학점 조회</h1>
-<table border="1">
+<table class="credits-table">
     <thead>
     <tr>
         <th>년도</th>
@@ -29,7 +29,9 @@
             <td>${semesterInfo.year}</td>
             <td>${semesterInfo.semester}</td>
             <td>${semesterInfo.totalCredits}</td>
-            <td><a href="${pageContext.request.contextPath}/details?year=${semesterInfo.year}&semester=${semesterInfo.semester}">링크</a></td>
+            <td>
+                <a href="${pageContext.request.contextPath}/details?year=${semesterInfo.year}&semester=${semesterInfo.semester}">링크</a>
+            </td>
         </tr>
     </c:forEach>
     <tr>

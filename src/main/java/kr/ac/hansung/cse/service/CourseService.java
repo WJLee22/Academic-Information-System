@@ -34,12 +34,20 @@ public class CourseService {
 
         return result;
     }
+
     // getTotalCredits() => 전체 총 이수 학점 정보를 가져오는 메서드
     public Long getTotalCredits() {
         return courseDao.getCredits();
     }
+
     // getCourseDetails() => ‘상세보기’ 링크 클릭시 나타나는 특정 년도의 해당학기에 해당하는 학기별 수강 내역 레코드들을 가져오는 메서드
     public List<Course> getAllCoursesByYearAndSemester(int year, int semester) {
         return courseDao.getCoursesByYearAndSemester(year, semester);
     }
+
+    // insertCourse() => 수강신청 폼에서 입력한 Course 객체를 DB에 저장하는 메서드
+    public void insertCourse(Course course) {
+        courseDao.insert(course);
+    }
+
 }

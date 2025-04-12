@@ -49,4 +49,10 @@ public class CourseDao {
                         "SELECT SUM(c.credits) FROM Course c", Long.class)
                 .getSingleResult();
     }
+
+    // DB의 Courses테이블에 Course 엔티티 객체를 레코드로 저장하는 메서드
+    public void insert(Course course) {
+        entityManager.persist(course);
+    }
+
 }

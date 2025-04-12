@@ -1,0 +1,13 @@
+.formTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.readonly-input {
+    pointer-events: none; /* 입력 불가능하게 설정 */
+    background-color: #f9f9f9; /* 읽기 전용 필드 배경색 */
+    color: #666; /* 텍스트 색상 */
+    border: 1px solid #ddd; /* 테두리 스타일 */
+}

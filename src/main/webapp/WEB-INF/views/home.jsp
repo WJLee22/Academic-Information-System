@@ -9,7 +9,7 @@
   <div class="menu">
     <button onclick="location.href='${pageContext.request.contextPath}/credits'">① 학년별 이수 학점 조회</button>
     <button onclick="location.href='${pageContext.request.contextPath}/enroll'">② 수강 신청하기</button>
-    <button onclick="location.href='${pageContext.request.contextPath}/enrolled-courses'">③ 수강 신청 조회</button>
+    <button onclick="location.href='${pageContext.request.contextPath}/enrolledCourses'">③ 수강 신청 조회</button>
   </div>
   </body>
 </html>
