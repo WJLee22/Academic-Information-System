@@ -3,6 +3,7 @@
 <head>
   <title>학사 정보 시스템</title>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/home.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 </head>
 <body>
 <div class="container">

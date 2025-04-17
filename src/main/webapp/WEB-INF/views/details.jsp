@@ -10,33 +10,46 @@
 <html>
 <head>
   <title>수강 상세 정보</title>
+  <link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/css/details.css" rel="stylesheet">
 </head>
 <body>
-<h2>${year}년 ${semester}학기 수강 내역</h2>
-<table border="1">
-  <thead>
-  <tr>
-    <th>년도</th>
-    <th>학기</th>
-    <th>교과목명</th>
-    <th>교과구분</th>
-    <th>담당교수</th>
-    <th>학점</th>
-  </tr>
-  </thead>
-  <tbody>
-  <c:forEach var="course" items="${courses}">
+<!-- 홈 아이콘 -->
+<div class="home-icon">
+  <a href="${pageContext.request.contextPath}/">
+    <img src="${pageContext.request.contextPath}/resources/images/home-icon.png" alt="홈으로">
+  </a>
+</div>
+
+<div class="container">
+  <h1>${year}년 ${semester}학기 수강 내역</h1>
+  <table class="details-table">
+    <thead>
     <tr>
-      <td>${course.year}</td>
-      <td>${course.semester}</td>
-      <td>${course.courseName}</td>
-      <td>${course.courseType}</td>
-      <td>${course.professor}</td>
-      <td>${course.credits}</td>
+      <th>년도</th>
+      <th>학기</th>
+      <th>교과목명</th>
+      <th>교과구분</th>
+      <th>담당교수</th>
+      <th>학점</th>
     </tr>
-  </c:forEach>
-  </tbody>
-</table>
-<a href="${pageContext.request.contextPath}/credits">← 학점 요약으로 돌아가기</a>
+    </thead>
+    <tbody>
+    <c:forEach var="course" items="${courses}">
+      <tr>
+        <td>${course.year}</td>
+        <td>${course.semester}</td>
+        <td>${course.courseName}</td>
+        <td>${course.courseType}</td>
+        <td>${course.professor}</td>
+        <td>${course.credits}</td>
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+  <div class="back-link">
+    <a href="${pageContext.request.contextPath}/credits">← 학년별 이수 학점 조회메뉴로 돌아가기</a>
+  </div>
+</div>
 </body>
 </html>
