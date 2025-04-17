@@ -26,10 +26,13 @@ public class CourseDao {
     //    {2024, 1, 7},  // 2024년 1학기 총 학점 (3 + 4)
     //    {2024, 2, 5},  // 2024년 2학기 총 학점
     //]
+    // 실제 수강한 교과목들만 조회하기 위해서 WHERE절에 2025년도 2학기에 수강예정인 교과목들은 제외하는 조건절을 추가함.
     public List<Object[]> getCreditsPerSemester() {
         return entityManager.createQuery(
                 "SELECT c.year, c.semester, SUM(c.credits) " +
-                        "FROM Course c GROUP BY c.year, c.semester " +
+                        "FROM Course c " +
+                        "WHERE NOT (c.year = 2025 AND c.semester = 2) " +
+                        "GROUP BY c.year, c.semester " +
                         "ORDER BY c.year ASC, c.semester ASC"
         ).getResultList();
     }
@@ -43,10 +46,11 @@ public class CourseDao {
                 .getResultList();
     }
 
-    // 전체 총 이수 학점
+    // 전체 총 이수 학점. 2025년도 2학기 수강예정인 교과목들은 제외함.
     public Long getCredits() {
         return entityManager.createQuery(
-                        "SELECT SUM(c.credits) FROM Course c", Long.class)
+                        "SELECT SUM(c.credits) FROM Course c " +
+                                "WHERE NOT (c.year = 2025 AND c.semester = 2)", Long.class)
                 .getSingleResult();
     }
 
