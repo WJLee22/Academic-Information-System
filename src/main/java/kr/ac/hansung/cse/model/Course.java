@@ -1,9 +1,7 @@
 package kr.ac.hansung.cse.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,9 +15,12 @@ import lombok.ToString;
 @Table(name = "courses") // courses라는 이름의 DB 테이블로 매핑
 public class Course {
     @NotNull(message = "수강년도 입력은 필수입니다")
-    private int year; // 수강년도
+    private Integer year; // 수강년도
+
     @NotNull(message = "학기 입력은 필수입니다")
-    private int semester; // 학기
+    @Min(value = 1, message = "학기는 1 또는 2만 가능합니다")
+    @Max(value = 2, message = "학기는 1 또는 2만 가능합니다")
+    private Integer semester; // 학기
 
     @Id
     @NotEmpty(message = "교과코드 입력은 필수입니다")
@@ -36,6 +37,8 @@ public class Course {
     private String professor; // 담당교수
 
     @NotNull(message = "학점 입력은 필수입니다")
-    private int credits; // 학점
+    @Min(value = 1, message = "학점은 최소 1학점 이상이어야 합니다")
+    @Max(value = 3, message = "학점은 최대 3학점 이하이어야 합니다")
+    private Integer credits; // 학점
 
 }

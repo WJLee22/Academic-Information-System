@@ -58,7 +58,16 @@
             <div class="form-row">
                 <div class="form-group">
                     <label>교과구분:</label>
-                    <sf:input class="form-control" path="courseType"/>
+                    <sf:select class="form-control" path="courseType">
+                        <sf:option value="" label="-- 교과구분 선택 --"/>
+                        <sf:option value="전기" label="전기"/>
+                        <sf:option value="전선" label="전선"/>
+                        <sf:option value="전필" label="전필"/>
+                        <sf:option value="선필교" label="선필교"/>
+                        <sf:option value="교필" label="교필"/>
+                        <sf:option value="일교" label="일교"/>
+                        <sf:option value="일선" label="일선"/>
+                    </sf:select>
                     <sf:errors path="courseType" class="error"/>
                 </div>
 
