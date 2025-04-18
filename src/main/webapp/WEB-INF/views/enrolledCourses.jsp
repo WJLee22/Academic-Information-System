@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>2025년 2학기 수강 신청 내역</title>
+    <title>수강 신청 조회</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/enrolledCourses.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 </head>
