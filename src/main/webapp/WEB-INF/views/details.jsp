@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-  <title>학기별 수강 내역</title>
+  <title>학년-학기별 수강 내역</title>
   <link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/resources/css/details.css" rel="stylesheet">
 </head>
